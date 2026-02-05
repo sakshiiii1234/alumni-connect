@@ -2,92 +2,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alumni Connect</title>
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AlumniConnect | Scale Your Knowledge</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body>
+<body class="bg-dark-subtle">
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">AlumniConnect</div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-navy py-3 sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold tech-logo" href="#">
+        <i class="fas fa-network-wired me-2 text-cyan"></i>Alumni<span class="text-cyan">Connect</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><a class="nav-link px-3" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link px-3" href="#how">Workflow</a></li>
 
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#how">How it Works</a>
-      <a class="btn" href="/accounts/register/">Register</a>
-      <a class="btn-outline" href="/accounts/login/">Login</a>
+          <li class="nav-item ms-lg-4"><a class="btn btn-outline-cyan btn-sm px-4 me-2" href="/accounts/login/">Join Now</a></li>
+          <li class="nav-item"><a class="btn btn-cyan btn-sm px-4 text-navy fw-bold" href="/admin/login">Admin</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>Connect Juniors with Seniors — Fast, Safe & Verified</h1>
-      <p>
-        Seniors share notes & resources. Juniors can request guidance, chat, and connect.
-        Teacher approval keeps the community trusted.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="btn big" href="/accounts/register/">Get Started</a>
-        <a class="btn-outline big" href="#features">Explore Features</a>
+  <header class="hero-tech">
+    <div class="container text-center text-lg-start">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-3 fw-bold  mb-4">Bridge the <span class="text-gradient">Experience Gap.</span></h1>
+          <p class="lead text-gray mb-5">
+            A decentralized-style resource hub where seniors mentor and juniors thrive. 
+            Verified by faculty, powered by community.
+          </p>
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+            <a href="/accounts/login/" class="btn btn-cyan btn-lg px-5 py-3 fw-bold">Get Started <i class="fas fa-arrow-right ms-2"></i></a>
+            <a href="#features" class="btn btn-dark-glass btn-lg px-5 py-3">Explore Tech <i class="fas fa-code ms-2"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <div class="hero-graphic-container">
+             <div class="tech-card-float">
+                <div class="p-4 border-bottom border-secondary">
+                    <div class="d-flex gap-2 mb-3">
+                        <div class="dot bg-danger"></div><div class="dot bg-warning"></div><div class="dot bg-success"></div>
+                    </div>
+                    <code class="text-cyan">// Connecting to Alumni_API...</code>
+                </div>
+                <div class="p-4">
+                    <h5 class="text-white">Senior_User: Rohan_M</h5>
+                    <p class="small text-gray">Uploaded: "Machine_Learning_Notes.pdf"</p>
+                    <div class="progress bg-dark" style="height: 5px;">
+                        <div class="progress-bar bg-cyan" style="width: 100%"></div>
+                    </div>
+                </div>
+             </div>
+          </div>
+        </div>
       </div>
     </div>
+  </header>
 
-    <div class="hero-card">
-      <h3>Why AlumniConnect?</h3>
-      <ul>
-        <li>✅ Verified users (Teacher approval)</li>
-        <li>✅ Notes + links + resources</li>
-        <li>✅ One-to-one chat</li>
-        <li>✅ Email connect option</li>
-      </ul>
+  <section class="py-5 bg-navy" id="features">
+    <div class="container py-5">
+      <div class="text-center mb-5">
+        <h2 class="text-white fw-bold h1">Engineered for Success</h2>
+        <p class="text-gray">Everything you need to build a knowledge bridge.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="fas fa-shield-halved icon-box mb-4"></i>
+            <h4>Teacher Verification</h4>
+            <p class="text-gray small">Zero-trust security model. Every user is vetted by faculty before gaining access.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="fas fa-comments icon-box mb-4"></i>
+            <h4>Encrypted Chat</h4>
+            <p class="text-gray small">Real-time P2P messaging to clear doubts with seniors instantly.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="fas fa-cloud-arrow-up icon-box mb-4"></i>
+            <h4>Resource Hub</h4>
+            <p class="text-gray small">Version-controlled notes and links curated specifically for your syllabus.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="section" id="features">
-    <h2>Features</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Role Based Access</h3>
-        <p>Seniors, Juniors and Teachers have different permissions.</p>
-      </div>
-
-      <div class="card">
-        <h3>Resource Sharing</h3>
-        <p>Seniors upload PDFs and share useful links for juniors.</p>
-      </div>
-
-      <div class="card">
-        <h3>Real-time Chat</h3>
-        <p>One-to-one messaging system to solve doubts quickly.</p>
-      </div>
-
-      <div class="card">
-        <h3>Teacher Control</h3>
-        <p>Teachers approve users and manage content for safety.</p>
+  <footer class="bg-black text-white py-5 border-top border-secondary">
+    <div class="container text-center text-md-between d-md-flex">
+      <p class="mb-0 text-gray small">© 2026 AlumniConnect • Build with <i class="fas fa-heart text-danger"></i> & Django</p>
+      <div class="mt-3 mt-md-0">
+        <a href="#" class="text-gray me-3"><i class="fab fa-github"></i></a>
+        <a href="#" class="text-gray"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
-  </section>
-
-  <!-- How it works -->
-  <section class="section" id="how">
-    <h2>How it Works</h2>
-
-    <div class="steps">
-      <div class="step">1️⃣ Register as Senior/Junior</div>
-      <div class="step">2️⃣ Teacher approves your account</div>
-      <div class="step">3️⃣ Seniors upload resources</div>
-      <div class="step">4️⃣ Juniors learn + chat + connect</div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>© 2026 AlumniConnect • Built with Django</p>
   </footer>
 
 </body>
