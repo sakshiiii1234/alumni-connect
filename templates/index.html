@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alumni Connect</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">AlumniConnect</div>
+
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it Works</a>
+      <a class="btn" href="/accounts/register/">Register</a>
+      <a class="btn-outline" href="/accounts/login/">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Connect Juniors with Seniors — Fast, Safe & Verified</h1>
+      <p>
+        Seniors share notes & resources. Juniors can request guidance, chat, and connect.
+        Teacher approval keeps the community trusted.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn big" href="/accounts/register/">Get Started</a>
+        <a class="btn-outline big" href="#features">Explore Features</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>Why AlumniConnect?</h3>
+      <ul>
+        <li>✅ Verified users (Teacher approval)</li>
+        <li>✅ Notes + links + resources</li>
+        <li>✅ One-to-one chat</li>
+        <li>✅ Email connect option</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <h2>Features</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Role Based Access</h3>
+        <p>Seniors, Juniors and Teachers have different permissions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Resource Sharing</h3>
+        <p>Seniors upload PDFs and share useful links for juniors.</p>
+      </div>
+
+      <div class="card">
+        <h3>Real-time Chat</h3>
+        <p>One-to-one messaging system to solve doubts quickly.</p>
+      </div>
+
+      <div class="card">
+        <h3>Teacher Control</h3>
+        <p>Teachers approve users and manage content for safety.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how">
+    <h2>How it Works</h2>
+
+    <div class="steps">
+      <div class="step">1️⃣ Register as Senior/Junior</div>
+      <div class="step">2️⃣ Teacher approves your account</div>
+      <div class="step">3️⃣ Seniors upload resources</div>
+      <div class="step">4️⃣ Juniors learn + chat + connect</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 AlumniConnect • Built with Django</p>
+  </footer>
+
+</body>
+</html>

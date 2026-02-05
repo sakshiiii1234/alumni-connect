@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h1>Welcome {{ request.user.username }}</h1>
+<p>Your role: {{ request.user.get_role_display }}</p>
+
+
+<hr>
+
+{% if request.user.role == "SENIOR" %}
+    <h2>Senior Dashboard</h2>
+    <p>You can upload notes and resources.</p>
+
+{% elif request.user.role == "JUNIOR" %}
+    <h2>Junior Dashboard</h2>
+    <p>You can view resources and connect with seniors.</p>
+
+{% elif request.user.role == "TEACHER" %}
+    <h2>Teacher Dashboard</h2>
+    <p>You can manage users and content.</p>
+{% endif %}
+
+</body>
+</html>
