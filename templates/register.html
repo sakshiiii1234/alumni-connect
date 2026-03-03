@@ -1,154 +1,160 @@
 {% load static %}
-
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | AlumniConnect</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- Optional shared CSS -->
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 <style>
-    :root {
-        --navy: #0f172a;
-        --dark-navy: #020617;
-        --cyan: #06b6d4;
-        --cyan-soft: rgba(6, 182, 212, 0.1);
-        --gray: #94a3b8;
-    }
+:root {
+    --navy: #0f172a;
+    --dark-navy: #020617;
+    --cyan: #06b6d4;
+    --cyan-soft: rgba(6, 182, 212, 0.1);
+    --gray: #94a3b8;
+    --error: #ef4444;
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Space Grotesk', sans-serif;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
 
-    body {
-        background-color: var(--dark-navy);
-        color: white;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+body {
+    background-color: var(--dark-navy);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .register-card {
-        background: rgba(30, 41, 59, 0.75);
-        backdrop-filter: blur(14px);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 22px;
-        padding: 40px 36px;
-        width: 100%;
-        max-width: 460px;
-        box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-        animation: float 6s ease-in-out infinite;
-    }
+.register-card {
+    background: rgba(30, 41, 59, 0.75);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 22px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 460px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
 
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-14px); }
-    }
+.register-card h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
 
-    .register-card h2 {
-        text-align: center;
-        font-size: 28px;
-        margin-bottom: 8px;
-    }
+.register-card p.subtitle {
+    text-align: center;
+    color: var(--gray);
+    margin-bottom: 26px;
+    font-size: 14px;
+}
 
-    .register-card p {
-        text-align: center;
-        color: var(--gray);
-        margin-bottom: 26px;
-        font-size: 14px;
-    }
+.form-group {
+    margin-bottom: 18px;
+}
 
-    /* Django form styling */
-    .register-card form p {
-        margin-bottom: 14px;
-    }
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: var(--gray);
+}
 
-    .register-card label {
-        display: block;
-        margin-bottom: 6px;
-        font-size: 14px;
-        color: var(--gray);
-    }
+input, select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    outline: none;
+    font-size: 15px;
+}
 
-    .register-card input,
-    .register-card select {
-        width: 100%;
-        padding: 14px 16px;
-        border-radius: 12px;
-        border: 1px solid rgba(255,255,255,0.15);
-        background: rgba(255,255,255,0.05);
-        color: white;
-        outline: none;
-        font-size: 15px;
-    }
+input:focus, select:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 0 3px var(--cyan-soft);
+}
 
-    .register-card input:focus,
-    .register-card select:focus {
-        border-color: var(--cyan);
-        box-shadow: 0 0 0 3px var(--cyan-soft);
-    }
+.errorlist {
+    list-style: none;
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--error);
+}
 
-    .register-card button {
-        width: 100%;
-        padding: 14px;
-        border-radius: 14px;
-        border: none;
-        font-weight: 600;
-        font-size: 16px;
-        background: var(--cyan);
-        color: #020617;
-        cursor: pointer;
-        transition: 0.3s;
-        margin-top: 10px;
-    }
+button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    background: var(--cyan);
+    color: #020617;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
 
-    .register-card button:hover {
-        background: #22d3ee;
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(6, 182, 212, 0.35);
-    }
+button:hover {
+    background: #22d3ee;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(6, 182, 212, 0.35);
+}
 
-    .register-footer {
-        text-align: center;
-        margin-top: 18px;
-        font-size: 14px;
-        color: var(--gray);
-    }
+.register-footer {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: var(--gray);
+}
 
-    .register-footer a {
-        color: var(--cyan);
-        text-decoration: none;
-        font-weight: 600;
-    }
+.register-footer a {
+    color: var(--cyan);
+    text-decoration: none;
+    font-weight: 600;
+}
 
-    .register-footer a:hover {
-        text-decoration: underline;
-    }
+.register-footer a:hover {
+    text-decoration: underline;
+}
 </style>
-
-
 </head>
+
 <body>
 
-
 <div class="register-card">
-    <h2 class="text-gradient">Create Account</h2>
-    <p>Join AlumniConnect and start connecting</p>
+    <h2>Create Account</h2>
+    <p class="subtitle">Join AlumniConnect and start connecting</p>
 
-    <form method="post">
+    <form method="post" novalidate>
         {% csrf_token %}
-        {{ form.as_p }}
+
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <ul class="errorlist">
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        {% endfor %}
+
         <button type="submit">Register</button>
     </form>
 
@@ -157,7 +163,6 @@
         <a href="/accounts/login/">Login</a>
     </div>
 </div>
-
 
 </body>
 </html>
